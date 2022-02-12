@@ -1,0 +1,163 @@
+@include desktop {
+  .has-aside-left {
+    &.has-aside-expanded {
+      nav.navbar, .content-inner {
+        padding-left: 15rem;
+      }
+    }
+    nav.navbar, .content-inner {
+      @include transition(padding-left);
+    }
+    aside.is-placed-left {
+      display: block;
+    }
+  }
+
+  aside.aside.is-expanded {
+    width: 15rem;
+
+    .menu-list {
+      @include icon-with-update-mark(3rem);
+
+      span.menu-item-label {
+        display: inline-block;
+      }
+
+      li.is-active {
+        ul {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+aside.aside {
+  width: 14rem;
+  overflow-x: auto;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  height: 100vh;
+  padding: 0;
+  box-shadow: none;
+  background: #2e323a;
+
+  .aside-tools {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #17191e;
+    color: white;
+    line-height: 3.25rem;
+    height: 3.25rem;
+    padding-left: 0.75rem;
+    flex: 1;
+  }
+
+  .menu-list {
+    li {
+      a {
+        color: #cacaca;
+        
+        &:hover {
+          color: #333;
+        }
+
+        &.has-dropdown-icon {
+          position: relative;
+          padding-right: 2rem;
+
+          .dropdown-icon {
+            position: absolute;
+            top: 0.5rem;
+            right: 0;
+          }
+        }
+      }
+      ul {
+        display: none;
+        border-left: 0;
+        background-color: #282c33;
+        padding-left: 0;
+        margin: 0 0 0.75rem;
+
+        li {
+          a {
+            padding: 0.75rem 0 0.75rem 0.75rem;
+            font-size: 0.95rem;
+
+            &.has-icon {
+              padding-left: 0;
+            }
+            &.is-active {
+              &:not(:hover) {
+                background: transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .menu-label {
+    padding: 0 0.75rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+}
+
+@include touch {
+  #app, nav.navbar {
+    @include transition(margin-left);
+  }
+  aside.aside {
+    @include transition(left);
+  }
+  .has-aside-mobile-transition {
+    .content-inner {
+      overflow-x: hidden;
+    }
+    .content-inner, #app, nav.navbar {
+      width: 100vw;
+    }
+    aside.aside {
+      width: 15rem;
+      display: block;
+      left: 15rem * -1;
+
+      .image {
+        img {
+          max-width: 15rem * .33;
+        }
+      }
+
+      .menu-list {
+        li.is-active {
+          ul {
+            display: block;
+          }
+        }
+        a {
+          @include icon-with-update-mark(3rem);
+
+          span.menu-item-label {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+  .has-aside-mobile-expanded {
+    #app, nav.navbar {
+      margin-left: 15rem;
+    }
+    aside.aside {
+      left: 0;
+    }
+  }
+}

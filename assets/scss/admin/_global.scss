@@ -1,0 +1,71 @@
+.admin-dashboard {
+  .navbar-main {
+    padding-left: 14rem !important;
+  }
+
+  .hero {
+    background-color: #fff;
+    box-shadow: 0 1px 0 rgba(24, 28, 33, 0.04);
+
+    .is-hero-bar {
+      background-color: white;
+      border-bottom: 1px solid rgba(24, 28, 33, 0.06);
+    }
+    .hero-body {
+      padding: 1.5rem;
+    }
+  }
+
+  .is-main-section {
+    padding-top: 1.5rem;
+  }
+
+  .is-title-bar {
+    margin-bottom: 0.75rem;
+    padding: 0 0 1rem;
+    border-bottom: 1px solid rgba(24, 28, 33, 0.06);
+  }
+
+  .section-light {
+    background-color: whitesmoke;
+    border-radius: 4px;
+    position: relative;
+    padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+  }
+
+  .footer {
+    background-color: white;
+    padding: 0.495rem 1.5rem;
+  }
+
+  .content-wrapper {
+    padding: 4.5rem 1.3rem 1.3rem;
+  }
+  
+  @include desktop {
+    .content-wrapper {
+      margin-left: 15rem;
+      min-height: calc(100vh - 92px);
+    }
+
+    .footer {
+      margin-left: 15rem;
+    }
+  }
+
+  .pagination-link {
+    text-decoration: none !important;
+  }
+}
+
+.search-row {
+  display: flex;
+  flex-wrap: wrap;
+
+  .search-column {
+    @include desktop {
+      padding: 0.75rem;
+      flex: 1;
+    }
+  }
+}
